@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Для Sandra ❤️</title>
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+	<style>
+		* { margin: 0; padding: 0; box-sizing: border-box; }
+		body {
+			height: 100vh; overflow: hidden; color: #f8e7bf;
+			font-family: 'Cormorant Garamond', serif;
+			background: radial-gradient(circle at top, #8c1d40 0%, #4a0018 55%, #25000d 100%);
+		}
+		.sparkle { position: fixed; width: 4px; height: 4px; border-radius: 50%; background: #ffd66b; animation: twinkle 3s infinite; pointer-events: none; }
+		@keyframes twinkle { 0%,100% { opacity: .2; transform: scale(1); } 50% { opacity: 1; transform: scale(2); } }
+		.petal { position: fixed; top: -50px; font-size: 24px; animation: fall linear infinite; pointer-events: none; }
+		@keyframes fall { 100% { transform: translateY(120vh) rotate(360deg); } }
+		#intro { position: absolute; z-index: 5; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 24px; text-align: center; }
+		.envelope { display: flex; align-items: center; justify-content: center; width: min(380px, 90vw); height: 250px; border: 3px solid #d4af37; border-radius: 12px; color: #ffd66b; background: #6e0f2f; box-shadow: 0 0 40px rgba(212,175,55,.3); cursor: pointer; transition: transform .5s ease, box-shadow .5s ease; }
+		.envelope:hover { transform: scale(1.05); box-shadow: 0 0 55px rgba(212,175,55,.5); }
+		.envelope:focus-visible { outline: 3px solid #fff2bd; outline-offset: 6px; }
+		.envelope span { font-size: 38px; font-weight: 700; }
+		.note { margin-top: 25px; font-size: 24px; }
+		#card { display: none; position: absolute; inset: 0; overflow: auto; padding: 50px 24px; }
+		.frame { position: relative; max-width: 1100px; margin: auto; padding: 60px; border: 4px solid #d4af37; border-radius: 30px; text-align: center; background: rgba(35,0,13,.88); box-shadow: 0 0 60px rgba(212,175,55,.25); }
+		.corner { position: absolute; color: #d4af37; font-size: 70px; }
+		.c1 { top: 15px; left: 20px; } .c2 { top: 15px; right: 20px; } .c3 { bottom: 15px; left: 20px; } .c4 { right: 20px; bottom: 15px; }
+		.title { margin-bottom: 15px; color: #ffd66b; font-size: clamp(3rem,8vw,5rem); line-height: 1; text-shadow: 0 0 25px rgba(255,214,107,.4); }
+		.subtitle { margin-bottom: 35px; color: #e7c86d; font-size: 2rem; }
+		.name { margin-bottom: 25px; color: #ffd66b; font-size: clamp(3.5rem,10vw,6rem); font-weight: 700; line-height: 1; }
+		.message { max-width: 900px; margin: auto; font-size: 1.8rem; line-height: 1.8; }
+		.roses { margin: 30px 0; font-size: 3rem; }
+		.wishes { margin-top: 40px; padding: 35px; border: 2px solid rgba(212,175,55,.4); border-radius: 20px; font-size: 1.5rem; line-height: 2; background: rgba(255,255,255,.04); }
+		.signature { margin-top: 40px; color: #ffd66b; font-size: 2rem; }
+		@media (max-width: 600px) {
+			#card { padding: 24px 12px 40px; }
+			.frame { padding: 48px 20px; border-width: 3px; }
+			.corner { font-size: 42px; }
+			.c1 { top: 10px; left: 12px; } .c2 { top: 10px; right: 12px; } .c3 { bottom: 10px; left: 12px; } .c4 { right: 12px; bottom: 10px; }
+			.subtitle { font-size: 1.5rem; } .message { font-size: 1.35rem; line-height: 1.55; } .roses { font-size: 2rem; }
+			.wishes { padding: 20px 12px; font-size: 1.25rem; line-height: 1.7; } .signature { font-size: 1.6rem; } .note { font-size: 20px; }
+		}
+	</style>
+</head>
+<body>
+	<div id="intro">
+		<div class="envelope" role="button" tabindex="0" aria-label="Відкрити привітання" onclick="openLetter()" onkeydown="handleEnvelopeKey(event)"><span>💌 Sandra</span></div>
+		<div class="note">Натисни, щоб відкрити привітання</div>
+	</div>
+	<main id="card">
+		<section class="frame">
+			<div class="corner c1">❦</div><div class="corner c2">❦</div><div class="corner c3">❦</div><div class="corner c4">❦</div>
+			<div class="title">З Днем Народження</div>
+			<div class="subtitle">Для особливої людини</div>
+			<div class="name">Sandra ❤️</div>
+			<div class="roses">🌹 ✨ 🌹 ✨ 🌹</div>
+			<div class="message">
+				Дорога Sandra!<br><br>
+				Сьогодні особливий день, коли хочеться побажати тобі найкращого.<br>
+				Нехай кожна мить твого життя буде наповнена теплом, любов'ю та натхненням.<br>
+				Нехай усі мрії знаходять шлях до здійснення, а нові можливості відкриваються саме тоді, коли вони потрібні.<br><br>
+				Твоя доброта, терпіння та щирість роблять світ навколо світлішим.<br>
+				Нехай поруч завжди будуть люди, які цінують тебе, підтримують і дарують щирі посмішки.
+			</div>
+			<div class="wishes">✨ Міцного здоров'я<br>✨ Щастя та гармонії<br>✨ Яскравих подорожей<br>✨ Натхнення для нових звершень<br>✨ Фінансового добробуту<br>✨ Любові, затишку та тепла<br>✨ Безлічі прекрасних моментів кожного дня</div>
+			<div class="signature">З найтеплішими побажаннями ❤️</div>
+		</section>
+	</main>
+	<script>
+		function showCard() {
+			document.getElementById('intro').style.display = 'none';
+			document.getElementById('card').style.display = 'block';
+			localStorage.setItem('SandraBirthdayOpened', 'true');
+		}
+		function openLetter() { showCard(); }
+		function handleEnvelopeKey(event) {
+			if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); showCard(); }
+		}
+		if (localStorage.getItem('SandraBirthdayOpened') === 'true') showCard();
+		for (let index = 0; index < 50; index += 1) {
+			const petal = document.createElement('div'); petal.className = 'petal'; petal.innerHTML = '🌹';
+			petal.style.left = `${Math.random() * 100}vw`; petal.style.animationDuration = `${6 + Math.random() * 8}s`; petal.style.animationDelay = `${Math.random() * -10}s`;
+			document.body.appendChild(petal);
+		}
+		for (let index = 0; index < 120; index += 1) {
+			const sparkle = document.createElement('div'); sparkle.className = 'sparkle';
+			sparkle.style.left = `${Math.random() * 100}vw`; sparkle.style.top = `${Math.random() * 100}vh`; sparkle.style.animationDelay = `${Math.random() * 3}s`;
+			document.body.appendChild(sparkle);
+		}
+	</script>
+</body>
+</html>
